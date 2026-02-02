@@ -5,8 +5,11 @@ Desktop GUI for importing, augmenting, and exporting WAV/MP3 samples.
 ## Features
 - Drag-and-drop import into a local `workspace/` directory.
 - Central table to edit transcriptions, delete rows, and track applied augmentations.
-- One-click augmentation (Gaussian noise, time stretch, pitch shift, shift) via `audiomentations`.
+- One-click augmentation (Gaussian noise, time stretch, pitch shift) via `audiomentations`.
 - Export to CSV or JSON with optional audio copies.
+
+## Screenshot
+![AudioAugmenter interface](screenshot/interface_example.png)
 
 ## Requirements
 - Python 3.13+
