@@ -8,8 +8,8 @@ import threading
 import numpy as np
 from PyQt6 import QtCore, QtGui, QtWidgets
 
-from augmentations import DEFAULT_PARAMS, build_augmenter, list_augmentation_names
-from data_manager import ALLOWED_EXTENSIONS, AudioEntry, DataManager
+from .augmentations import DEFAULT_PARAMS, build_augmenter, list_augmentation_names
+from .data_manager import ALLOWED_EXTENSIONS, AudioEntry, DataManager
 from pydub import AudioSegment
 from pydub.playback import play
 import soundfile as sf
@@ -226,11 +226,6 @@ class MainWindow(QtWidgets.QMainWindow):
                 widgets["max_semitones"] = make_spin(0.0, 12.0, 0.5, defaults["max_semitones"])
                 layout.addRow("Min semitones", widgets["min_semitones"])
                 layout.addRow("Max semitones", widgets["max_semitones"])
-            elif name == "shift":
-                widgets["min_fraction"] = make_spin(-1.0, 0.0, 0.05, defaults["min_fraction"])
-                widgets["max_fraction"] = make_spin(0.0, 1.0, 0.05, defaults["max_fraction"])
-                layout.addRow("Min fraction", widgets["min_fraction"])
-                layout.addRow("Max fraction", widgets["max_fraction"])
 
             self.augmentation_param_widgets[name] = widgets
             self.params_stack.addWidget(form)

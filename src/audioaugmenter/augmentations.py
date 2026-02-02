@@ -5,7 +5,6 @@ from typing import Dict
 from audiomentations import (
     AddGaussianNoise,
     PitchShift,
-    Shift,
     TimeStretch,
 )
 
@@ -13,7 +12,6 @@ DEFAULT_PARAMS: dict[str, dict] = {
     "gaussian_noise": {"min_amplitude": 0.01, "max_amplitude": 0.1},
     "time_stretch": {"min_rate": 0.8, "max_rate": 1.25},
     "pitch_shift": {"min_semitones": -3.0, "max_semitones": 3.0},
-    "shift": {"min_fraction": -0.2, "max_fraction": 0.2, "rollover": True},
 }
 
 
@@ -36,13 +34,6 @@ def build_augmenter(name: str, params: dict | None = None):
         return PitchShift(
             min_semitones=float(params.get("min_semitones", DEFAULT_PARAMS[name]["min_semitones"])),
             max_semitones=float(params.get("max_semitones", DEFAULT_PARAMS[name]["max_semitones"])),
-            p=1.0,
-        )
-    if name == "shift":
-        return Shift(
-            min_fraction=float(params.get("min_fraction", DEFAULT_PARAMS[name]["min_fraction"])),
-            max_fraction=float(params.get("max_fraction", DEFAULT_PARAMS[name]["max_fraction"])),
-            rollover=bool(params.get("rollover", DEFAULT_PARAMS[name]["rollover"])),
             p=1.0,
         )
     raise ValueError(f"Unknown augmentation: {name}")

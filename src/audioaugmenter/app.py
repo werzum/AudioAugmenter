@@ -4,8 +4,7 @@ import sys
 
 from PyQt6 import QtWidgets
 
-from ui import MainWindow
-
+from .ui import MainWindow
 
 def main() -> None:
     app = QtWidgets.QApplication(sys.argv)
