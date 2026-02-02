@@ -1,0 +1,18 @@
+[project]
+name = "audioaugmenter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "PyQt6>=6.7.0",
+    "audiomentations>=0.38.0",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "soundfile>=0.12.0",
+    "pydub>=0.25.1"
+]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
