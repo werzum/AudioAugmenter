@@ -1,6 +1,6 @@
 [project]
 name = "audioaugmenter"
-version = "0.1.0"
+version = "0.2.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
@@ -15,6 +15,9 @@ dependencies = [
     "audiomentations>=0.43.1",
 ]
 
+[project.urls]
+Source = "https://github.com/werzum/AudioAugmenter"
+
 [build-system]
 requires = ["hatchling>=1.24"]
 build-backend = "hatchling.build"
@@ -25,4 +28,3 @@ packages = ["src/audioaugmenter"]
 
 [project.scripts]
 audioaugmenter = "audioaugmenter.__main__:main"
-
